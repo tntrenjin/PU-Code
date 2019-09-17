@@ -2,7 +2,7 @@ import java.util.*;
 
 class main
 {
-    static int GCD(int n, int m)
+    	static int GCD(int n, int m)
 	{
 		return n % m == 0 ? m : GCD(m, n % m);
 	}

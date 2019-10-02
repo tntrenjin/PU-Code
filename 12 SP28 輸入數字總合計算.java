@@ -6,21 +6,15 @@ class main
 	{
 		Scanner sc = new Scanner(System.in);
 		String str[] = sc.nextLine().split(" ");
-		boolean letter = false;
 		int sum = 0;
 		
 		for(int i = 0; i < str.length; i++)
 		{
-			for(int j = 0; j < str[i].length(); j++, letter = false)
+			try
 			{
-				if(Character.isLetter(str[i].charAt(j)))
-				{
-					letter = true;
-					break;
-				}
+				sum += Integer.valueOf(str[i]);
 			}
-			if(!letter)
-				sum += Integer.parseInt(str[i]);
+			catch(Exception e){}
 		}
 		
 		System.out.printf("ANS= %d", sum);

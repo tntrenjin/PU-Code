@@ -9,7 +9,7 @@ class main
 		String goal = sc.next(),
 			   all  = sc.next();
 		
-		int count = -1,
+		int count = 0,
 			num[] = new int[100];
 			
 		for(int i = 0, temp;;)
@@ -18,8 +18,7 @@ class main
 			
 			if(temp != -1)
 			{
-				count++;
-				num[count] = all.length() - temp;
+				num[count++] = all.length() - temp;
 				i = temp + 1;
 			}
 			else 

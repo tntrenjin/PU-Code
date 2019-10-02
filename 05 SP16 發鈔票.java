@@ -7,18 +7,15 @@ class main
 		Scanner sc = new Scanner(System.in);
 		
 		int n = sc.nextInt(),
-			num[] = new int[5];
+			num[] = new int[5],
+			coin[] = new int[] {100, 50, 10, 5, 1};
 		
-		num[0] = n / 100;
-		n -= num[0] * 100;
-		num[1] = n / 50;
-		n -= num[1] * 50;
-		num[2] = n / 10;
-		n -= num[2] * 10;
-		num[3] = n / 5;
-		n -= num[3] * 5;
-		num[4] = n;
-		
+		for(int i = 0; i < 5; i++)
+		{
+			num[i] = n / coin[i];
+			n -= num[i] * coin[i];
+		}
+
 		System.out.printf("1-%d, 5-%d, 10-%d, 50-%d, 100-%d",num[4],num[3],num[2],num[1],num[0]);
 	}
 }

@@ -9,14 +9,11 @@ class main
 		int n = sc.nextInt(),
 			num[] = new int[10000];
 		
-		for(int i=0;i<10000;i++)
+		for(int i = 0; i < 10000; i++)
 			num[i] = 0;
-		for(int i=0;i<n;i++)
-		{
-			int temp = sc.nextInt();
-			num[temp]++; 
-		}
-		for(int i=0;i<10000;i++)
+		for(int i = 0; i < n; i++)
+			num[sc.nextInt()]++; 
+		for(int i = 0; i < 10000; i++)
 			if(num[i] > 1)
 				System.out.println(i + " " + num[i]);
 	}

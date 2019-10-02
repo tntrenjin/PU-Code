@@ -9,19 +9,16 @@ class main
 		int n[] = new int[5];
 		int min = 9999;
 		
-		for(int i=0;i<5;i++)
+		for(int i = 0; i < 5; i++)
 			n[i] = sc.nextInt();
 			
-		for(int i=0;i<5;i++)
-		{
-			for(int j=0;j<5;j++)
+		for(int i = 0; i < 5; i++)
+			for(int j = 0; j < 5; j++)
 			{
 				if(i == j)
 					continue;
-				
 				min = Math.min(min, Math.abs(n[i]) * Math.abs(n[j]));
 			}
-		}
 		System.out.println(min);
 	}
 }

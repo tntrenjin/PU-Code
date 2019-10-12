@@ -2,37 +2,34 @@ import java.util.*;
 
 class main
 {
+	static int tree[] = new int[1025];
+	static int depth = 0;
+	
+	static void insertBT(int num, int index, int _depth)
+	{
+		if(tree[index] == 0)
+		{
+			depth = Math.max(depth, _depth);
+			tree[index] = num;
+			return;
+		}
+		
+		if(tree[index] < num)
+			insertBT(num, index * 2 + 1, _depth + 1);
+		else if(tree[index] > num)
+			insertBT(num, index * 2, _depth + 1);
+	}
+
 	public static void main(String args[])
 	{
 		Scanner sc = new Scanner(System.in);
-		
-		int n = sc.nextInt(),
-			tree[] = new int[1024],
-			mh = 1;
+		int n = sc.nextInt();
 		
 		for(int i = 0; i < n; i++)
-		{
-			int num = sc.nextInt();
-		
-			for(int index = 1, h = 1; index < 1024; h++)
-			{
-				if(tree[index] != 0)
-					if(tree[index] < num)
-						index = index * 2 + 1;
-					else
-						index *= 2;
-				else
-				{
-					tree[index] = num;
-					mh = (h > mh ? h : mh);
-					break;
-				}
-			}
-		}
-		
-		System.out.println(mh);
-		
-		for(int i = 0; i < Math.pow(2, mh); i++)
+			insertBT(sc.nextInt(), 1, 1);
+			
+		System.out.println(depth);
+		for(int i = 0; i < Math.pow(2, depth); i++)
 			System.out.print(tree[i] + " ");
 		System.out.println();
 	}

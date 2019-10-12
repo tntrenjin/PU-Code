@@ -16,7 +16,7 @@ class main
 	{
 		Scanner sc = new Scanner(System.in);
 		String str1[] = sc.next().split("/"),
-			   str2[] = sc.next().split("/");
+		       str2[] = sc.next().split("/");
 			   
 		// [0] 分子 [1] 分母
 		int num1[] = new int[] {Integer.parseInt(str1[0]), Integer.parseInt(str1[1])},

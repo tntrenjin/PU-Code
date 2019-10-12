@@ -2,11 +2,6 @@ import java.util.*;
 
 class main
 {
-	static boolean check(char input)
-	{
-		return (input >= 'a' && input <= 'z') || (input >= 'A' && input <= 'Z');
-	}
-
 	public static void main(String args[])
 	{
 		Scanner sc = new Scanner(System.in);
@@ -14,7 +9,7 @@ class main
 		String clear = "";
 		
 		for(char s : str.toCharArray())
-			if(check(s))
+			if(Character.isLetter(s))
 				clear += s;
 		
 		for(int i = 0, clearIndex = clear.length() - 1; i < str.length(); i++)
@@ -23,7 +18,7 @@ class main
 			boolean now_lowerCase = true;
 			boolean shift_lowerCase = true;
 			
-			if(!check(nowChar))
+			if(!Character.isLetter(nowChar))
 			{
 				System.out.print(nowChar);
 				continue;
